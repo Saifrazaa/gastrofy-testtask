@@ -14,41 +14,44 @@ const Appbar = ({ }) => {
     return (
         <Wrapper>
             <StoreProvider>
-                Vald leverantör: <span>coop</span>
+                Vald leverantör: <img src="/assets/images/coop.png" alt="-"/>
             </StoreProvider>
             <AppBarWrapper>
                 <InnerWrapper>
                     <Left>
-                        <a href="javascript:;">GASTROFY</a>
+                        <a href="https://www.gastrofy.se/">GASTROFY</a>
                     </Left>
                     <Center>
                         <Field>
                             Min meny
-                        </Field>
+                        </Field>                        
+                        <ArrowIcon>
+                            <img src="/assets/images/arrow-forward.png" alt="-"/>
+                        </ArrowIcon>
                         <SubField>
                             Mina varor
                         </SubField>
                     </Center>
                     <Right>
-                        <MenuAction href="" active={true}>
+                        <MenuAction href="javasscript:;" active={true}>
                             <IconWrapper>
-                                1
+                                <img src="/assets/images/mastake.png" alt="-"/>
                             </IconWrapper>
                             <LabelWrap>
                                 Min matkasse
                             </LabelWrap>
                         </MenuAction>
-                        <MenuAction>
+                        <MenuAction href="javasscript:;">
                             <IconWrapper >
-                                <i className="icon i-account"></i>2
+                                <img src="/assets/images/cook.png" alt="-"/>
                             </IconWrapper>
                             <LabelWrap>
                                 Laga
                             </LabelWrap>
                         </MenuAction>
-                        <MenuAction>
+                        <MenuAction href="javasscript:;">
                             <IconWrapper>
-                                3
+                                <img src="/assets/images/account.png" alt=""/>
                             </IconWrapper>
                             <LabelWrap>
                                 Logga in
@@ -71,11 +74,22 @@ const StoreProvider = styled.div`
     height:20px;
     display:flex;
     justify-content:center;
-    font-size:11px;
+    font-size:10px;
     align-items:center;
     color:#666;
     font-family:${Celias};
     font-weight:400;
+    img{
+        height:14px;
+        margin-left:5px;
+        cursor:pointer;
+    }
+`;
+const ArrowIcon = styled.div`
+    margin:0px 10px;
+    img{
+        height:10px;
+    }
 `;
 const AppBarWrapper = styled.div`
     width:100%;
@@ -97,7 +111,7 @@ const InnerWrapper = styled.div`
 const Left = styled.div`
     width:250px;
     font-family:${CeliasBold};
-    font-size:19px;
+    font-size:18px;
     letter-spacing:3px;
     padding-top:5px;
     margin-left:0;
@@ -115,6 +129,7 @@ const Center = styled.div`
     justify-content:center;
     align-items:center;
     display:flex;
+    line-height:1;
 `;
 const Field = styled.div`
     font-family:${CeliasBold};
@@ -122,6 +137,7 @@ const Field = styled.div`
     color:#fa85a5;
     letter-spacing: .88px;
     font-size: 21px;
+    cursor:pointer;
 `;
 const SubField = styled.div`
     font-family:${Celias};
@@ -131,20 +147,24 @@ const SubField = styled.div`
     font-size: 21px;
 `;
 const Right = styled.div`
-    width:250px;
+    width:230px;
     display: flex;
     padding-right: 20px;
     justify-content: space-between;
     padding-right: 0;
+    margin-right:20px;
+    margin-bottom:5px;
 `;
 const MenuAction = styled.a`
-    width:33.33%;
+    // width:33.33%;
     text-align:center;
     text-decoration:none;
     color:${props=>props.active?'#57ca8e':'#333333'}
 `;
 const IconWrapper = styled.div`
-
+    img{
+        height:30px;
+    }
 `;
 const LabelWrap = styled.div`
     font-size: 10px;

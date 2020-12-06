@@ -21,8 +21,8 @@ const GroceryPage = ({ }) => {
             />
             <FlowWrapper>
                 <IconWrapper>
-                    fff
-                    </IconWrapper>
+                    <img src="/assets/images/plate.png" alt="-"/>
+                </IconWrapper>
                 <BoldText>
                     PLANERA MÅLTIDER
                 </BoldText>
@@ -37,12 +37,12 @@ const GroceryPage = ({ }) => {
                         FÅ PERSONLIGT MENYFÖRSLAG
                     </ButtonWrapper>
                 </GallerBoxWrap>
-                <GallerBoxWrap width="13%">
+                <GallerBoxWrap width="12.6%">
                     <LightText>eller</LightText>
                 </GallerBoxWrap>
                 <GallerBoxWrap width="22%">
                     <img src="/assets/images/ghost-recipe.jpg" alt="-" />
-                    <ButtonWrapper onClick={()=>window.open('https://www.gastrofy.se/recipes/discover')}>
+                    <ButtonWrapper onClick={()=>window.open('https://www.gastrofy.se/recipes/discover','_self')}>
                         VÄLJ RECEPT SJÄLV
                     </ButtonWrapper>
                 </GallerBoxWrap>
@@ -79,7 +79,9 @@ const CustomRow = styled(Row)`
     margin-top:20px;
 `;
 const IconWrapper = styled.div`
-
+    img{
+        width:47px;
+    }
 `;
 const LightText = styled.div`
     font-size:12px;
@@ -96,6 +98,7 @@ const BoldText = styled.div`
     color: #202020;
     font-family:${CeliasBold};
     line-height: 1.67;
+    letter-spacing:0.22px;
 `;
 const NormalText = styled.div`
     font-size: 1rem;

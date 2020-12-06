@@ -15,6 +15,6 @@ const Layout = ({ children }) => {
 const Wrapper = styled.div`
     background-color:#eef2f3;
     height:100vh;
-    width:100vw;
+    // width:100vw;
 `;
 export default Layout;

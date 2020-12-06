@@ -2,14 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { Celias, CeliasBold } from "../../shared-components/fonts";
 const Modal = ({ title, content, actionText, show, setShowModal }) => {
+    const closeModal=()=>{
+        setShowModal(false);
+    }
     return (
         <Wrapper show={show}>
-            <OverlayWrapper onClick={() => setShowModal(false)}>
-
-            </OverlayWrapper>
+            <OverlayWrapper onClick={closeModal} />
             <ModalWrapper show={show}>
-                <CloseIcon onClick={() => setShowModal(false)}>
-                    *
+                <CloseIcon onClick={closeModal}>
+                    <img src="/assets/images/cross.png" alt="-"/>
                 </CloseIcon>
                 <ContentWrapper>
                     <h3>
@@ -35,19 +36,20 @@ const Wrapper = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    transition: background-color 0.5s cubic-bezier(.4,0,.2,1);
-    background-color:rgba(0,0,0,0.5);
+    transition: all 0.5s cubic-bezier(.4,0,.2,1);
     ${props => {
         if (props.show) {
             return `
                 visibility:visible;
                 opacity:1;
+                background-color:rgba(0,0,0,0.5);
             `;
         }
         else {
             return `
                 visibility:hidden;
                 opacity:0;
+                background-color:transparent;
         `;
         }
     }}
@@ -118,6 +120,10 @@ const CloseIcon = styled.div`
     align-items:center;
     justify-content:center;
     cursor:pointer;
+    img{
+        height:18px;
+        cursor:pointer;
+    }
 `;
 const ActionBtn = styled.button`
     width: 215px;
