@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Celias, CeliasBold } from "../../shared-components/fonts";
 const Modal = ({ title, content, actionText, show, setShowModal }) => {
-    const closeModal=()=>{
+    const closeModal = () => {
         setShowModal(false);
     }
     return (
@@ -10,7 +10,13 @@ const Modal = ({ title, content, actionText, show, setShowModal }) => {
             <OverlayWrapper onClick={closeModal} />
             <ModalWrapper show={show}>
                 <CloseIcon onClick={closeModal}>
-                    <img src="/assets/images/cross.png" alt="-"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.56 26.56">
+                        <g id="Layer_2" data-name="Layer 2" fill="#333333">
+                            <g id="Layer_1-2" data-name="Layer 1" fill="#333333">
+                                <path class="cls-1" d="M15.76,13.28,26.05,3A1.75,1.75,0,0,0,23.58.51l-10.3,10.3L3,.51A1.75,1.75,0,0,0,.51,3l10.3,10.29L.51,23.58A1.75,1.75,0,0,0,3,26.05L13.28,15.76l10.3,10.29a1.75,1.75,0,0,0,2.47-2.47Z" />
+                            </g>
+                        </g>
+                    </svg>
                 </CloseIcon>
                 <ContentWrapper>
                     <h3>
@@ -78,7 +84,7 @@ const ModalWrapper = styled.div`
                 transform: translateY(0);
             `;
         }
-        else{
+        else {
             return `
                 opacity: 0;
                 transform: translateY(-20px);
@@ -120,9 +126,8 @@ const CloseIcon = styled.div`
     align-items:center;
     justify-content:center;
     cursor:pointer;
-    img{
-        height:18px;
-        cursor:pointer;
+    svg{
+        height:12px;
     }
 `;
 const ActionBtn = styled.button`
